@@ -1,16 +1,34 @@
-# React + Vite
+# Todo App Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the frontend for the Todo application built with React and Vite.
 
-Currently, two official plugins are available:
+## Deployment to Netlify
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+To deploy this application to Netlify:
 
-## React Compiler
+1. Push this frontend directory to a GitHub repository
+2. Connect the repository to Netlify
+3. Set the build settings in Netlify:
+   - Build command: `npm run build`
+   - Publish directory: `dist`
+4. Netlify will automatically detect and deploy the functions in `netlify/functions`
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Local Development
 
-## Expanding the ESLint configuration
+1. Install dependencies:
+   ```
+   npm install
+   ```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+2. Run the development server:
+   ```
+   npm run dev
+   ```
+
+The app will be available at http://localhost:5173
+
+## Project Structure
+
+- `src/` - React components and services
+- `netlify/functions/` - Netlify serverless functions
+- `dist/` - Production build output
