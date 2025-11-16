@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MERN Todo App</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+        }
+        
+        .project-info {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+        
+        .project-info h2 {
+            color: #495057;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .project-info p {
+            color: #6c757d;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background: #007bff;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #0056b3;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+        }
+        
+        .btn-secondary {
+            background: #28a745;
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background: #1e7e34;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
+        }
+        
+        .btn-info {
+            background: #17a2b8;
+            color: white;
+        }
+        
+        .btn-info:hover {
+            background: #117a8b;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(23, 162, 184, 0.3);
+        }
+        
+        .instructions {
+            margin-top: 30px;
+            padding: 20px;
+            background: #e9ecef;
+            border-radius: 8px;
+            text-align: left;
+        }
+        
+        .instructions h3 {
+            color: #495057;
+            margin-bottom: 10px;
+        }
+        
+        .instructions ul {
+            padding-left: 20px;
+        }
+        
+        .instructions li {
+            margin-bottom: 8px;
+            color: #6c757d;
+            line-height: 1.5;
+        }
+        
+        .footer {
+            margin-top: 30px;
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📚 MERN Todo App</h1>
+        
+        <div class="project-info">
+            <h2>Project Structure</h2>
+            <p>This application consists of two main parts:</p>
+            <p><strong>Frontend:</strong> React application in the <code>frontend</code> directory</p>
+            <p><strong>Backend:</strong> Node.js/Express API in the <code>backend</code> directory</p>
+        </div>
+        
+        <div class="links">
+            <a href="/api/health" class="btn btn-info">🏥 Check Backend Health</a>
+            <a href="/frontend/" class="btn btn-primary">📱 Access Frontend App</a>
+            <a href="/api/tasks" class="btn btn-secondary">📋 View API Tasks</a>
+        </div>
+        
+        <div class="instructions">
+            <h3>Development Commands</h3>
+            <ul>
+                <li><strong>npm run dev</strong> - Start both frontend and backend</li>
+                <li><strong>npm run server</strong> - Start backend only</li>
+                <li><strong>npm run client</strong> - Start frontend only</li>
+                <li><strong>npm start</strong> - Start backend in production mode</li>
+            </ul>
+        </div>
+        
+        <div class="footer">
+            <p>MERN Stack Todo Application</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -12,10 +12,17 @@ function TodoApp() {
     setLoading(true);
     try {
       const data = await fetchTasks();
-      setTasks(data);
+      // Ensure data is an array
+      if (Array.isArray(data)) {
+        setTasks(data);
+      } else {
+        console.warn('API response is not an array:', data);
+        setTasks([]);
+      }
     } catch (err) {
       setError('Failed to load tasks');
-      console.error(err);
+      console.error('Error loading tasks:', err);
+      setTasks([]); // Set to empty array on error
     } finally {
       setLoading(false);
     }
@@ -37,10 +44,13 @@ function TodoApp() {
     try {
       const taskData = { ...newTask };
       const res = await createTask(taskData);
-      setTasks(prev => [res.task, ...prev]);
+      // Ensure res.task exists and is valid
+      if (res && res.task) {
+        setTasks(prev => [res.task, ...prev]);
+      }
       setNewTask({ title: '', description: '', priority: 'Medium' });
     } catch (e) {
-      console.error(e);
+      console.error('Error creating task:', e);
       setError('Failed to create task');
     }
   };
@@ -50,7 +60,7 @@ function TodoApp() {
       await deleteTask(id);
       setTasks(prev => prev.filter(t => t._id !== id));
     } catch (e) {
-      console.error(e);
+      console.error('Error deleting task:', e);
       setError('Failed to delete task');
     }
   };
@@ -59,9 +69,12 @@ function TodoApp() {
     try {
       const newStatus = task.status === 'Completed' ? 'Pending' : 'Completed';
       const res = await patchTask(task._id, { status: newStatus });
-      setTasks(prev => prev.map(t => t._id === res.task._id ? res.task : t));
+      // Ensure res.task exists and is valid
+      if (res && res.task) {
+        setTasks(prev => prev.map(t => t._id === res.task._id ? res.task : t));
+      }
     } catch (e) {
-      console.error(e);
+      console.error('Error updating task:', e);
       setError('Failed to update task');
     }
   };

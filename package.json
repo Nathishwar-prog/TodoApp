@@ -1,0 +1,20 @@
+{
+  "name": "mern-todo-app",
+  "version": "1.0.0",
+  "description": "MERN Stack Todo Application",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd backend && npm run dev",
+    "client": "cd frontend && npm run dev",
+    "build": "cd frontend && npm run build",
+    "heroku-postbuild": "cd frontend && npm install && npm run build"
+  },
+  "dependencies": {
+    "concurrently": "^7.6.0"
+  },
+  "keywords": ["mern", "todo", "task", "mongodb", "express", "react", "node"],
+  "author": "Your Name",
+  "license": "MIT"
+}
