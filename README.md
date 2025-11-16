@@ -1,3 +1,11 @@
+# Challengs i faced 
+During Developemnt i faced more errors and issues from the API endpoint 
+During Deployment I easily deployed the frontend but i face some during deployment of the backend on render and connecting both my main problem i faced CORS issues .
+After more try i fixed the issues 
+
+
+# To run this entrie application by one shot but before read the below How to setup the Frontend and backend and env and after run this code 
+
 # Todo App Frontend
 
 This is the frontend for the Todo application built with React and Vite.
