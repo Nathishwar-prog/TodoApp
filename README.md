@@ -102,55 +102,6 @@ API calls are handled by the service functions in `src/services/taskService.js`:
 
 The API client is configured in `src/api.js` and uses the `VITE_API_URL` environment variable.
 
-## Deployment to Netlify
-
-### 1. Push to GitHub
-
-Make sure your code is pushed to a GitHub repository.
-
-### 2. Create Site on Netlify
-
-1. Go to [Netlify](https://app.netlify.com/)
-2. Click "Add new site" → "Import an existing project"
-3. Connect to GitHub and select your repository
-
-### 3. Configure Build Settings
-
-- **Build command**: `npm run build`
-- **Publish directory**: `dist`
-
-### 4. Environment Variables
-
-Set the following environment variable in Netlify:
-- `VITE_API_URL`: `https://your-backend-url.onrender.com/api`
-
-## Customization
-
-### Styling
-
-Styles are defined in `src/App.css`. You can modify the CSS classes to change the appearance.
-
-### API Endpoints
-
-The API endpoints are defined in `src/services/taskService.js`. You can modify the paths if your backend API changes.
-
-## Common Issues
-
-### API Connection Errors
-
-- Check that your backend server is running
-- Verify the `VITE_API_URL` in your environment files
-- Ensure CORS is properly configured on the backend
-
-### Build Errors
-
-- Make sure all dependencies are installed
-- Check for syntax errors in your code
-
-### Environment Variables Not Loading
-
-- Ensure environment variables are prefixed with `VITE_`
-- Restart the development server after changing environment files
 
 # Todo App Backend
 
