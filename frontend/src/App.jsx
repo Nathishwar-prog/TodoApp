@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { fetchTasks, createTask, updateTask, deleteTask, patchTask } from './services/taskService';
+import { fetchTasks, createTask, deleteTask, patchTask } from './services/taskService';
 import { 
   Moon, Sun, Plus, Trash2, Check, X, 
   AlertCircle, Clock, Calendar, CheckCircle2 
@@ -40,7 +40,7 @@ function TodoApp() {
       const data = await fetchTasks();
       if (Array.isArray(data)) setTasks(data);
       else setTasks([]);
-    } catch (err) {
+    } catch {
       setError('Failed to load tasks');
       setTasks([]);
     } finally {
