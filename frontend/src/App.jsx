@@ -66,13 +66,6 @@ function TodoApp() {
       const res = await createTask(taskData);
       if (res && res.task) {
         setTasks(prev => [res.task, ...prev]);
-        // Add animation class
-        setTimeout(() => {
-          const newTaskElement = document.querySelector(`[data-task-id="${res.task._id}"]`);
-          if (newTaskElement) {
-            newTaskElement.classList.add('animate-slide-in');
-          }
-        }, 10);
       }
       setNewTask({ title: '', description: '', priority: 'Medium' });
     } catch {
