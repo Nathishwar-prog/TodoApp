@@ -1,182 +1,22 @@
-/* Global Styles */
-body {
-  margin: 0;
-  padding: 0;
-  background: #f7f8fa;
-  font-family: "Inter", sans-serif;
-  color: #2b2b2b;
+/* Custom animations */
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.container {
-  max-width: 720px;
-  margin: auto;
-  padding: 24px;
+.animate-slide-in {
+  animation: slide-in 0.3s ease-out;
 }
 
-.app-title {
-  text-align: center;
-  font-size: 32px;
-  font-weight: 700;
-  margin-bottom: 30px;
-  color: #222;
-}
-
-/* Add Task Form */
-.add-form {
-  background: #fff;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-  margin-bottom: 32px;
-}
-
-.form-title {
-  margin-bottom: 15px;
-  font-size: 20px;
-  font-weight: 600;
-}
-
-.input,
-.textarea,
-.select {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 14px;
-  border-radius: 8px;
-  border: 1px solid #ddd;
-  font-size: 15px;
-  transition: border 0.2s ease;
-}
-
-.input:focus,
-.textarea:focus,
-.select:focus {
-  border-color: #555;
-  outline: none;
-}
-
-.btn-add {
-  width: 100%;
-  padding: 12px;
-  background: #222;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.btn-add:hover {
-  background: #000;
-}
-
-/* Task List */
-.section-title {
-  font-size: 20px;
-  margin-bottom: 12px;
-}
-
-.empty-message {
-  text-align: center;
-  color: #666;
-}
-
-.task-ul {
-  list-style: none;
-  padding: 0;
-}
-
-.task-item {
-  background: #fff;
-  padding: 18px;
-  border-radius: 12px;
-  margin-bottom: 18px;
-  display: flex;
-  justify-content: space-between;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-  align-items: flex-start;
-}
-
-.task-title {
-  margin: 0;
-  font-size: 18px;
-  font-weight: 600;
-}
-
-.task-desc {
-  margin: 6px 0;
-  color: #666;
-  font-size: 14px;
-}
-
-.task-meta {
-  display: flex;
-  gap: 10px;
-  margin-top: 8px;
-}
-
-/* Priority Tags */
-.priority-tag {
-  padding: 4px 8px;
-  border-radius: 6px;
-  font-size: 12px;
-  font-weight: 600;
-  text-transform: uppercase;
-}
-
-.low { background: #e8f5e9; color: #2e7d32; }
-.medium { background: #fff3e0; color: #ef6c00; }
-.high { background: #ffebee; color: #c62828; }
-
-/* Status Tags */
-.status-tag {
-  padding: 4px 8px;
-  border-radius: 6px;
-  font-size: 12px;
-  font-weight: 600;
-}
-
-.pending { background: #e3e7f1; color: #283593; }
-.completed { background: #dcedc8; color: #558b2f; }
-
-/* Actions */
-.task-actions {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.btn-toggle,
-.btn-delete {
-  padding: 8px 12px;
-  border-radius: 6px;
-  font-size: 14px;
-  cursor: pointer;
-  border: none;
-}
-
-.complete {
-  background: #4caf50;
-  color: #fff;
-}
-
-.undo {
-  background: #757575;
-  color: #fff;
-}
-
-.btn-delete {
-  background: #e53935;
-  color: #fff;
-}
-
-.btn-delete:hover {
-  background: #c62828;
-}
-
-/* Completed Task Style */
-.completed .task-title {
-  text-decoration: line-through;
-  opacity: 0.6;
+/* Ensure smooth transitions */
+* {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
